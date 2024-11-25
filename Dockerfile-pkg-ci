@@ -1,0 +1,46 @@
+FROM alpine:latest AS builder
+
+ARG var1
+ARG var2
+ARG var3
+ARG var4
+
+RUN apk add --no-cache libc6-compat curl wget
+
+WORKDIR /app
+
+RUN wget --header="JOB-TOKEN: $var3" https://git.intelbras.com.br/api/v4/projects/4220/packages/generic/Middleware-Frontend-NextJS-pkged--$var4/0.0.1/$var1
+RUN wget --header="JOB-TOKEN: $var3" https://git.intelbras.com.br/api/v4/projects/4220/packages/generic/Middleware-Frontend-NextJS-pkged--$var4/0.0.1/$var1.sha256
+RUN sha256sum -c *.sha256
+RUN ls -lah
+
+
+# ---
+FROM alpine:latest AS runner
+
+ARG var1
+ARG var2
+ENV var_entrypoint=${var2}
+
+WORKDIR /usr/local/bin
+
+RUN addgroup -S nonroot \
+    && adduser -S nonroot -G nonroot
+
+COPY --from=builder /app/$var1 .
+
+RUN mv $var1 $var2 \
+    && ls -lah \
+    && chmod +x $var2 \
+    && ls -lah
+
+USER nonroot
+
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
+
+#EXPOSE 5000
+
+ENTRYPOINT /usr/local/bin/$var_entrypoint
+
+

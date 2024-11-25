@@ -1,0 +1,87 @@
+include:
+  - project: devops1/devops-templates
+    ref: main
+    file: 
+      - variables-default.yml
+      - tests-semgrep-gitlab-template.yml
+      - tests-owasp-dependency-check-template.yml
+      - sonarqube-template.yml
+#      - build-image-docker-linux.yml
+      - build-and-upload-nextjs-windows-and-linux-binaries.yml
+      - build-and-upload-image-docker-linux-with-pkg.yml
+      - tests-robot-default-template.yml
+
+
+image: node:latest
+
+stages:
+  - format
+  - test
+#  - compile
+#  - build
+#  - deploy
+#  - release
+  - build-and-upload
+  - build-and-upload-image
+  - robot
+
+
+variables:
+  PACKAGE_NAME: "Middleware-Frontend-NextJS"
+  PACKAGE_NAME_PKG: "Middleware-Frontend-NextJS-pkged"
+  PACKAGE_VERSION: "0.0.1"
+  IMAGE_NAME: "intelbras/middleware-frontend-nextjs"
+  IMAGE_NAME_PKG: "intelbras/middleware-frontend-nextjs-pkged"
+  COMPILE_BUILD_PATH: "."
+  RUN_JOBS_BRANCH: "develop"
+  WORKSPACE: ""
+  # QA
+  ROBOT_BRANCH: Pipeline
+  ROBOT_GIT: "https://git.intelbras.com.br/isec/linha-future/qa/middlewares-e-centrais.git"
+  ROBOT_TARGET_IP: http://10.100.61.145
+  ROBOT_TARGET_PORT: 11080
+  ROBOT_TARGET_USER: system 
+  ROBOT_TARGET_PASS: Admin123
+  ROBOT_EXECDIR: " middlewares-e-centrais"
+  ROBOT_TARGET_TEST_FILES: "tests/frontend/"
+  ROBOT_TAG: "smoke"
+
+
+
+.npm-install:
+  before_script:
+   - npm install
+
+
+owasp-dependency-check:
+  extends:
+    - .npm-install
+
+
+robotframework-browser-chrome:
+  stage: robot
+  extends: .robotframework-browser
+  variables:
+    ROBOT_TARGET_BROWSER: headlesschrome
+
+
+robotframework-browser-firefox:
+  stage: robot
+  extends: .robotframework-browser
+  variables:
+    ROBOT_TARGET_BROWSER: headlessfirefox
+
+
+
+
+#release:
+#  stage: release
+#  image: registry.gitlab.com/gitlab-org/release-cli:latest
+#  rules:
+#    - if: $CI_COMMIT_TAG
+#  script:
+#    - |
+#      release-cli create --name "Release $CI_COMMIT_TAG" --tag-name $CI_COMMIT_TAG \
+#        --assets-link "{\"name\":\"${WINDOWS_AMD64_BINARY}\",\"url\":\"${PACKAGE_REGISTRY_URL}/${WINDOWS_AMD64_BINARY}\"}" \
+#        --assets-link "{\"name\":\"${LINUX_AMD64_BINARY}\",\"url\":\"${PACKAGE_REGISTRY_URL}/${LINUX_AMD64_BINARY}\"}"
+

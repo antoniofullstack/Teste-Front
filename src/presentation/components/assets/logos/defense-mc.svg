@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="572" height="135.934" viewBox="0 0 572 135.934">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_3132" data-name="Retângulo 3132" width="572" height="135.934" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_5119" data-name="Grupo 5119" transform="translate(0 0)">
+    <g id="Grupo_5118" data-name="Grupo 5118" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path id="Caminho_2671" data-name="Caminho 2671" d="M0,11.97H23.457c20.693,0,34.009,12.087,34.009,32.78S44.15,77.835,23.457,77.835H0ZM22.742,64.006c11.166,0,17.926-6.659,17.926-19.259,0-12.5-7.069-18.95-17.926-18.95H16.077v38.21Z" transform="translate(0 19.069)" fill="#fff"/>
+      <path id="Caminho_2672" data-name="Caminho 2672" d="M25.716,11.97H67.1V25.8H41.9V37.784H61.978V51.614H41.9v12.4H68.329V77.835H25.716Z" transform="translate(40.969 19.069)" fill="#fff"/>
+      <path id="Caminho_2673" data-name="Caminho 2673" d="M45.863,11.97H86.222V25.8H61.94V39.628H82.019V53.46H61.94V77.835H45.863V11.97" transform="translate(73.065 19.069)" fill="#fff"/>
+      <path id="Caminho_2674" data-name="Caminho 2674" d="M64.587,11.97h41.282V25.8H80.664V37.784h20.078V51.614H80.664v12.4h26.429V77.835H64.587Z" transform="translate(102.895 19.069)" fill="#fff"/>
+      <path id="Caminho_2675" data-name="Caminho 2675" d="M84.694,11.97h16.287L119.214,42.8a118.943,118.943,0,0,1,5.531,11.267h.2S124.231,47,124.231,42.8V11.97h16.077V77.835H124.125L105.789,47.1a119.151,119.151,0,0,1-5.536-11.277h-.1s.718,7.069.718,11.267V77.835H84.79V11.97Z" transform="translate(134.927 19.069)" fill="#fff"/>
+      <path id="Caminho_2676" data-name="Caminho 2676" d="M117.94,57.939s7.478,6.864,15.774,6.864c3.278,0,6.965-1.333,6.965-5.225,0-7.779-29.707-7.58-29.707-27.863,0-12.188,10.243-20.18,23.356-20.18,14.239,0,21.2,7.479,21.2,7.479l-6.864,13.225a25.147,25.147,0,0,0-14.545-5.84c-3.278,0-6.965,1.434-6.965,5.121,0,8.3,29.707,6.864,29.707,27.658,0,10.961-8.4,20.486-23.252,20.486a34.1,34.1,0,0,1-24.072-9.423Z" transform="translate(174.512 18.376)" fill="#fff"/>
+      <path id="Caminho_2677" data-name="Caminho 2677" d="M131.289,11.97h41.282V25.8h-25.2V37.784H167.45V51.614H147.372v12.4H173.8V77.835H131.188V11.97Z" transform="translate(208.998 19.069)" fill="#fff"/>
+      <path id="Caminho_2678" data-name="Caminho 2678" d="M296.966,0H180.19a20.327,20.327,0,0,0-20.283,20.283v88.708a20.327,20.327,0,0,0,20.283,20.283H296.966a20.327,20.327,0,0,0,20.283-20.283V20.283A20.464,20.464,0,0,0,296.966,0M207.745,99.259H193.618V30.832h14.135Zm74.983,0H268.592V80.617H234.685V99.158H220.55V66.485h48.043V50.1a5.945,5.945,0,0,0-5.941-5.941H240.524a5.945,5.945,0,0,0-5.941,5.941v5.225H220.448V47.428a17.4,17.4,0,0,1,17.387-17.413h27.375A17.4,17.4,0,0,1,282.624,47.4V99.259Z" transform="translate(254.75 -0.001)" fill="#fff"/>
+      <text id="Middlewares_e_Centrais" data-name="Middlewares e Centrais" transform="translate(0 135)" fill="#fff" font-size="26" font-family="Arial, sans-serif" font-weight="500" letter-spacing="0.008em"><tspan x="0" y="0">Middlewares e Centrais</tspan></text>
+    </g>
+  </g>
+</svg>
